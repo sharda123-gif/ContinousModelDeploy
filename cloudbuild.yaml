@@ -13,8 +13,10 @@ steps:
     ls -la
     ls -al models/
 - name: "gcr.io/cloud-builders/gke-deploy"
-  args:
-  - run
-  - --filename=k8s/
-  - --location=us-central1-a
-  - --cluster=my-cluster
+    args:
+      - "run"
+      - "--filename=k8s/"
+      - "--location=us-central1-a"
+      - "--cluster=my-cluster"
+      - "--image=gcr.io/neon-griffin-451814-n1/imgwebapp:v1"  # Ensure the correct image is deployed
+      - "--namespace=default" # Optional: Specify namespace if needed
