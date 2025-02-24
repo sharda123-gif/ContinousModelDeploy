@@ -13,7 +13,7 @@ steps:
     ls -la
     ls -al models/
 - name: "gcr.io/cloud-builders/gke-deploy"
-    args:
+  args:
       - "run"
       - "--filename=k8s/"
       - "--location=us-central1-a"
